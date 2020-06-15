@@ -1,0 +1,13 @@
+version: '3.5'
+services:
+  nuxeo:
+    image: nuxeo-local:latest
+    hostname: nuxeo
+    container_name: nuxeo
+    ports:
+      - '8080:8080'
+    volumes:
+      - ./nuxeo-data:/var/lib/nuxeo/data
+    environment:
+      NUXEO_DEV_MODE: "true"
+      NUXEO_PACKAGES: "nuxeo-web-ui nuxeo-dam nuxeo-showcase-content nuxeo-template-rendering nuxeo-template-rendering-samples nuxeo-spreadsheet nuxeo-api-playground"
